@@ -1,0 +1,14 @@
+# My autostart file
+
+# Set background color.
+swaybg -c '#54487a' >/dev/null 2>&1 &
+
+# Syncthing
+/usr/bin/syncthing --no-browser >/dev/null 2>&1 &
+
+# Night light
+gammastep -l 34:-118 > /dev/null 2>&1 &
+
+# Polkit for etcher
+/usr/libexec/polkit-gnome-authentication-agent-1 2>&1 &
+
