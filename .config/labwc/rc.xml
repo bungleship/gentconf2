@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<labwc_config>
+
+  <core>
+    <gap>10</gap>
+  </core>
+
+  <theme>
+    <name></name>
+    <cornerRadius>8</cornerRadius>
+    <font name="sans" size="20" />
+  </theme>
+
+  <desktops>
+    <popupTime>0</popupTime>
+    <names>
+      <name>shell</name>
+      <name>main</name>
+    </names>
+  </desktops>
+
+  <windowRules>
+    <windowRule identifier="*">
+      <action name="SendToDesktop" to="main" follow="no" />
+      <action name="ToggleDecorations" />
+      <action name="ToggleDecorations" />
+      <action name="Maximize" />
+    </windowRule>
+    <windowRule identifier="foot">
+      <action name="SendToDesktop" to="shell" follow="yes" />
+    </windowRule>
+  </windowRules>
+  <keyboard>
+    <!-- Disable defaults
+    <default />
+    -->
+    <keybind key="C-A-Return">
+      <action name="Execute" command="foot sh -c 'tmux'" />
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="GoToDesktop" to="right" wrap="yes" />
+    </keybind>
+    <keybind key="A-a">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-S-a">
+      <action name="PreviousWindow" />
+    </keybind>
+    <keybind key="A-1">
+      <action name="SendToDesktop" to="shell" follow="no" />
+    </keybind>
+    <keybind key="A-2">
+      <action name="SendToDesktop" to="main" follow="no" />
+    </keybind>
+    <keybind key="A-x">
+      <action name="Close" />
+    </keybind>
+    <keybind key="A-q">
+      <action name="Reconfigure" />
+    </keybind>
+    <keybind key="A-S-q">
+      <action name="Exit" />
+    </keybind>
+    <keybind key="C-A-p">
+      <action name="Execute" command="loginctl poweroff" />
+    </keybind>
+  </keyboard>
+
+  <libinput>
+    <device category="default">
+      <leftHanded>yes</leftHanded>
+    </device>
+  </libinput>
+
+</labwc_config>
